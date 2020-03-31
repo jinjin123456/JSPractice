@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /*.buttons{
+      width: 235px;
+      margin: 10px auto;
+    }*/
+    #outer{
+      width: 400px;
+      margin: 10px auto;
+      padding: 0;
+      text-align: center;
+    }
+    #box1{
+      width: 100px;
+      height: 100px;
+      background-color: #000000;
+      margin: 20px auto;
+    }
+  </style>
+  <script type="text/javascript">
+    function changeStyle(elem,attr,value){
+      elem.style[attr] = value
+    }
+    window.onload = function () {
+      var oDiv = document.getElementById('box1')
+      /*document.getElementsByClassName('width')[0].onclick = function () {
+        oDiv.style.width = '400px'
+      }
+      document.getElementsByClassName('height')[0].onclick = function () {
+        oDiv.style.height = '400px'
+      }
+      document.getElementsByClassName('color')[0].onclick = function () {
+        oDiv.style.backgroundColor = 'yellowgreen'
+      }
+      document.getElementsByClassName('hide')[0].onclick = function () {
+        oDiv.style.display = 'none'
+      }
+      document.getElementsByClassName('reset')[0].onclick = function () {
+        oDiv.style.display = 'block'
+        oDiv.style.width = '100px'
+        oDiv.style.height = '100px'
+        oDiv.style.backgroundColor = '#000000'
+        oDiv.style.margin = '20px auto'
+      }*/
+      var aBtn = document.getElementsByTagName('input')
+      var aAtt = ["width","height","background","display","display"]
+      var aVal = ['200px','200px','red','none','block']
+
+      for(var i=0;i<aBtn.length;i++){
+        aBtn[i].index = i
+        aBtn[i].onclick = function () {
+          //this.index == aBtn.length - 1 && (oDiv.style.cssText = "") //这句就相当于if判断语句
+          if(this.index==aBtn.length-1){ //单独对最后一个重置选项进行处理
+            oDiv.style.cssText = ""
+          }
+          changeStyle(oDiv,aAtt[this.index],aVal[this.index])
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+<!--<div class="buttons">
+  <button class="width">变宽</button>
+  <button class="height">变高</button>
+  <button class="color">变色</button>
+  <button class="hide">隐藏</button>
+  <button class="reset">重置</button>
+</div>-->
+<div id="outer">
+  <input type="button" value="变宽" />
+  <input type="button" value="变高" />
+  <input type="button" value="变色" />
+  <input type="button" value="隐藏" />
+  <input type="button" value="重置" />
+  <div id="box1"></div>
+</div>
+</body>
+</html>

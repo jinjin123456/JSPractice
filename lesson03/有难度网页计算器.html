@@ -29,8 +29,8 @@
     window.onload = function () {
       var oCalc = document.getElementById("calc");
       var aA = oCalc.getElementsByTagName("a");
-      var aInput = oCalc.getElementsByTagName("input")[0];
-      var oFormula = document.getElementById("formula");
+      var aInput = oCalc.getElementsByTagName("input")[0];  //单个输入
+      var oFormula = document.getElementById("formula");  //上面的显示
       var s = false;
 
       for (var i = 0; i < aA.length; i++){
@@ -86,6 +86,8 @@
         }
         else
         {
+          //test返回一个布尔值，指出在被查找的字符串中是否匹配给出的正则表达式
+          //
           /[\%\/\*\-\+]$/.test(aInput.value) || (oFormula.value += aInput.value);
           aInput.value = a;
           /[\%\/\*\-\+]$/.test(oFormula.value) || (oFormula.value += aInput.value);

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>用户按下键盘显示keyCode</title>
+  <script type="text/javascript">
+    window.onload = function () {
+       var oP = document.getElementsByTagName('p')[0]
+      document.onkeyup = function (ev) {
+        var event = ev||event
+        oP.innerHTML = event.keyCode
+        return false
+      }
+    }
+  </script>
+</head>
+<body>
+<p>这里将显示您按下键的 keyCode</p>
+</body>
+</html>

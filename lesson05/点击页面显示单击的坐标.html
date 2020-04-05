@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>点击页面显示单击的坐标</title>
+  <script type="text/javascript">
+    document.onclick = function (ev) {
+      var event = ev||event
+      alert("坐标为："+event.clientX+","+event.clientY)
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>
